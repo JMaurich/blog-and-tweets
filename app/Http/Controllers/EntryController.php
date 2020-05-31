@@ -44,7 +44,7 @@ public function update(Request $request, Entry $entry)
     {
         /*dd($request->all());*/
         $validatedData = $request->validate([
-            'title' => 'required|min:7|max:255|unique:entries,id,'.$entry->id, // valida que ese titule exista, para ese autor para modificarlo
+            'title' => 'required|min:7|max:255|unique:entries,id,'.$entry->id, // valida que ese titulo sea unico con excepcion de este que se esta modificando.
             'content' => 'required|min:25|max:3000'
         ]);
 
