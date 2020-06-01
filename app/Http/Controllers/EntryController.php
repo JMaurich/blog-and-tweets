@@ -36,7 +36,7 @@ class EntryController extends Controller
     }
     public function edit(Entry $entry)
     {
-        $this->autorize('update', $entry);
+        $this->authorize('update', $entry);
         return view('entries.edit', compact('entry'));
     }
 
@@ -44,7 +44,7 @@ class EntryController extends Controller
 public function update(Request $request, Entry $entry)
     {
 
-        $this->autorize('update', $entry);
+        $this->authorize('update', $entry);
         /*dd($request->all());*/
         $validatedData = $request->validate([
             'title' => 'required|min:7|max:255|unique:entries,id,'.$entry->id, // valida que ese titulo sea unico con excepcion de este que se esta modificando.

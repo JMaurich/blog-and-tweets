@@ -28,5 +28,5 @@ Route::get('/entries/{entryBySlug}', 'GestController@show');
 Route::get('/entries/{entry}/edit', 'EntryController@edit');
 Route::put('/entries/{entry}', 'EntryController@update');
 
-Route::get('/users/{user}', 'UserController@show');
+Route::get('/@{user}', 'UserController@show');
 
